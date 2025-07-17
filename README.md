@@ -11,11 +11,7 @@ A responsive weather application built with HTML, CSS, and JavaScript that allow
 
 ## Demo
 
-[Live Demo](https://your-weather-app-url.vercel.app) <!-- Update this with your actual Vercel URL -->
-
-## Screenshots
-
-![Weather App Screenshot](./Images/screenshot.png) <!-- Add a screenshot of your app -->
+[Live Demo](https://weather-app-beige-three-23.vercel.app/) - Check out the live application!
 
 ## Technologies Used
 
@@ -36,8 +32,8 @@ A responsive weather application built with HTML, CSS, and JavaScript that allow
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/weather-app.git
-   cd weather-app
+   git clone https://github.com/Naitik4897/Weather-App.git
+   cd Weather-App
    ```
 
 2. Open `index.html` in your web browser or serve it using a local server.
@@ -91,6 +87,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-Your Name - your.email@example.com
+Naitik4897 - [GitHub Profile](https://github.com/Naitik4897)
 
-Project Link: [https://github.com/yourusername/weather-app](https://github.com/yourusername/weather-app)
+Project Link: [https://github.com/Naitik4897/Weather-App](https://github.com/Naitik4897/Weather-App)
