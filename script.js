@@ -6,6 +6,7 @@ const grantAccessContainer = document.querySelector(".grant-location-container")
 const searchForm = document.querySelector("[data-searchForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
+const errorContainer = document.querySelector(".error-container");
 
 //initially vairables need????
 
@@ -24,12 +25,14 @@ function switchTab(newTab) {
             //kya search form wala container is invisible, if yes then make it visible
             userInfoContainer.classList.remove("active");
             grantAccessContainer.classList.remove("active");
+            errorContainer.classList.remove("active");
             searchForm.classList.add("active");
         }
         else {
             //main pehle search wale tab pr tha, ab your weather tab visible karna h 
             searchForm.classList.remove("active");
             userInfoContainer.classList.remove("active");
+            errorContainer.classList.remove("active");
             //ab main your weather tab me aagya hu, toh weather bhi display karna poadega, so let's check local storage first
             //for coordinates, if we haved saved them there.
             getfromSessionStorage();
@@ -76,15 +79,18 @@ async function fetchUserWeatherInfo(coordinates) {
         const  data = await response.json();
 
         loadingScreen.classList.remove("active");
-        userInfoContainer.classList.add("active");
-        renderWeatherInfo(data);
+        
+        if(response.ok) {
+            userInfoContainer.classList.add("active");
+            renderWeatherInfo(data);
+        } else {
+            showErrorScreen();
+        }
     }
     catch(err) {
         loadingScreen.classList.remove("active");
-        //HW
-
+        showErrorScreen();
     }
-
 }
 
 function renderWeatherInfo(weatherInfo) {
@@ -152,6 +158,7 @@ async function fetchSearchWeatherInfo(city) {
     loadingScreen.classList.add("active");
     userInfoContainer.classList.remove("active");
     grantAccessContainer.classList.remove("active");
+    errorContainer.classList.remove("active");
 
     try {
         const response = await fetch(
@@ -159,10 +166,33 @@ async function fetchSearchWeatherInfo(city) {
           );
         const data = await response.json();
         loadingScreen.classList.remove("active");
-        userInfoContainer.classList.add("active");
-        renderWeatherInfo(data);
+        
+        if(response.ok) {
+            userInfoContainer.classList.add("active");
+            renderWeatherInfo(data);
+        } else {
+            showErrorScreen();
+        }
     }
     catch(err) {
-        //hW
+        loadingScreen.classList.remove("active");
+        showErrorScreen();
+    }
+}
+
+function showErrorScreen() {
+    errorContainer.classList.add("active");
+    userInfoContainer.classList.remove("active");
+    grantAccessContainer.classList.remove("active");
+    loadingScreen.classList.remove("active");
+}
+
+function clearError() {
+    errorContainer.classList.remove("active");
+    // Clear the search input
+    const searchInput = document.querySelector("[data-searchInput]");
+    if(searchInput) {
+        searchInput.value = "";
+        searchInput.focus();
     }
 }

@@ -108,6 +108,53 @@ h1 {
     text-transform: uppercase;
 }
 
+.error-container{
+    display: none;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.error-container.active{
+    display: flex;
+}
+
+.error-container img{
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.error-container h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--colorLight2);
+}
+
+.error-container p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.error-container p:last-of-type{
+    margin-bottom: 1.5rem;
+}
+
+.retry-btn{
+    margin-top: 1rem;
+    background-color: var(--colorDark2);
+    transition: all 0.3s ease;
+}
+
+.retry-btn:hover{
+    background-color: var(--colorDark1);
+    transform: translateY(-2px);
+}
+
 .user-info-container{
     display:none;
 }
@@ -229,4 +276,118 @@ h1 {
     justify-content: center;
     border-radius: 100%;
     margin-bottom:1px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+    
+    .tab-container {
+        width: 100%;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+    
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .weather-container {
+        margin-block: 2rem;
+    }
+    
+    .error-container {
+        max-width: 100%;
+        padding: 1.5rem 1rem;
+    }
+    
+    .error-container img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+    
+    .error-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .error-container p {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .retry-btn {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+    
+    .parameter-container {
+        width: 100%;
+        gap: 8px 15px;
+    }
+    
+    .parameter {
+        flex-basis: 45%;
+        max-width: 150px;
+        padding: 0.8rem;
+    }
+    
+    .parameter img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .parameter p:first-of-type {
+        font-size: 1rem;
+    }
+    
+    .parameter p:last-of-type {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .error-container img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .error-container h2 {
+        font-size: 1.3rem;
+    }
+    
+    .error-container p {
+        font-size: 0.85rem;
+    }
+    
+    .parameter {
+        flex-basis: 100%;
+        max-width: 180px;
+    }
+    
+    .form-container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .form-container input {
+        width: calc(100% - 60px);
+        height: 45px;
+        font-size: 0.9rem;
+    }
 }
