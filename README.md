@@ -11,7 +11,7 @@ A responsive weather application built with HTML, CSS, and JavaScript that allow
 
 ## Demo
 
-[Live Demo](https://weather-app-beige-three-23.vercel.app/) - Check out the live application!
+[Live Demo](https://weather-app-naitik.vercel.app/) - Check out the live application!
 
 ## Technologies Used
 
@@ -89,4 +89,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Naitik4897 - [GitHub Profile](https://github.com/Naitik4897)
 
-Project Link: [https://github.com/Naitik4897/Weather-App](https://github.com/Naitik4897/Weather-App)
+Project Link: [https://github.com/Naitik4897/Weather-App](https://github.com/Naitik4897/Weather-Ap)
